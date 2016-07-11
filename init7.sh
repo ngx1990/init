@@ -18,14 +18,14 @@ service ntpd restart
 
 yum check-update
 # Install needed packages
-for Package in deltarpm gcc gcc-c++ make cmake autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel libaio readline-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5-devel libidn libidn-devel openssl openssl-devel libxslt-devel libicu-devel libevent-devel libtool libtool-ltdl bison gd-devel vim-enhanced pcre-devel zip unzip sysstat patch bc expect rsync git lsof lrzsz
+for Package in deltarpm gcc gcc-c++ make cmake autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel libaio readline-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5-devel libidn libidn-devel openssl openssl-devel libxslt-devel libicu-devel libevent-devel libtool libtool-ltdl bison gd-devel vim-enhanced pcre-devel zip unzip sysstat patch bc expect rsync git lsof lrzsz wget screen
 do
     yum -y install $Package
 done
-yum -y update bash openssl glibc
+yum -y
+#EOF update bash openssl glibc
 
 # Set DNS
 #cat > /etc/resolv.conf << EOF
 #nameserver 114.114.114.114
 #nameserver 8.8.8.8
-#EOF
